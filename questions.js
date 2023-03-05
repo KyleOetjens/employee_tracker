@@ -7,44 +7,45 @@ const employeeQuestions =[
     },  {
         type: 'input',
         message: 'What is the department name',
-        name: 'engGitUn',
+        name: 'deptName',
         when: (employee) => employee.optionslist === 'Add a department'
     },
     {
         type: 'input',
         message: 'What is the name of the role?',
-        name: 'intSchool',
+        name: 'roleName',
         when: (employee) => employee.optionslist === 'Add a role'
     },{
         type: 'input',
         message: 'What is the salary of the role?',
-        name: 'intSchool',
+        name: 'salRole',
         when: (employee) => employee.optionslist === 'Add a role'
     },{
         type: 'input',
         message: 'What is the department of the role?',
-        name: 'intSchool',
+        name: 'roleDept',
         when: (employee) => employee.optionslist === 'Add a role'
     },{
         type: 'input',
         message: `What is the employee's first name?`,
-        name: 'intSchool',
+        name: 'empFirstName',
         when: (employee) => employee.optionslist === 'Add an employee'
     },{
         type: 'input',
         message: `What is the employee's last name`,
-        name: 'intSchool',
+        name: 'empLastName',
         when: (employee) => employee.optionslist === 'Add an employee'
     },{
         type: 'input',
         message: `What is the employee's role`,
-        name: 'intSchool',
+        name: 'empRole',
         when: (employee) => employee.optionslist === 'Add an employee'
     },{
         type: 'input',
         message: `Please add the employee's manager if applicable`,
-        name: 'intSchool',
+        name: 'empManager',
         when: (employee) => employee.optionslist === 'Add an employee'
     },
 ]
+console.log(employeeQuestions);
 module.exports = employeeQuestions

@@ -61,6 +61,53 @@ else if (data.optionslist === `View all employees`) {
     init();
   });
 }
+else if (data.optionslist === `Add a department`) {
+  const sql = `INSERT INTO department (department_name)
+  VALUES(?)`;
+  const param = data.deptName
+  db.query(sql,param, (err, result) => {
+    if (err) {
+      console.log(err);
+      init();
+    }
+    if(result){
+    db.query(`SELECT * FROM department`,(err,result) =>{
+      console.log(result);
+      init();
+    })
+}
+  });
+}
+else if (data.optionslist === `Add a role`) {
+  db.query(`SELECT * FROM employee_info`, (err, result) => {
+    if (err) {
+      console.log(err);
+      init();
+    }
+    console.log(result);
+    init();
+  });
+}
+else if (data.optionslist === `Add an employee`) {
+  db.query(`SELECT * FROM employee_info`, (err, result) => {
+    if (err) {
+      console.log(err);
+      init();
+    }
+    console.log(result);
+    init();
+  });
+}
+else if (data.optionslist === `Update employee role`) {
+  db.query(`SELECT * FROM employee_info`, (err, result) => {
+    if (err) {
+      console.log(err);
+      init();
+    }
+    console.log(result);
+    init();
+  });
+}
 })
 }
 /*
