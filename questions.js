@@ -11,7 +11,7 @@ const db = mysql.createConnection(
     console.log(`Connected to the employee_tracker database.`)
   );
   const empInfo = db.query(`SELECT first_name FROM employee_info`, (err, result) => {
-    if(err){console.log(err);}console.log(map(result));})
+    if(err){console.log(err);}console.log(result);})
 const employeeQuestions =[
     {
         type: 'list',
