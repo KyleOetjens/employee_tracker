@@ -10,13 +10,15 @@ const db = mysql.createConnection(
     },
     console.log(`Connected to the employee_tracker database.`)
   );
-  const empInfo = db.query(`SELECT first_name FROM employee_info`, (err, result) => {
-    if(err){console.log(err);}console.log(result);})
+  // empInfo = db.query(`SELECT first_name FROM employee_info`, (err, result) => {
+  //  if(err){console.log(err);}console.log(result);})
 const employeeQuestions =[
     {
         type: 'list',
         message: `What would you like to do?`,
-        choices: [`View all departments`, `View all roles`,`View all employees`,`Add a department`,`Add a role`,`Add an employee`,`Update employee role`],
+        choices: [`View all departments`, `View all roles`,`View all employees`,`Add a department`,`Add a role`,`Add an employee`,
+        `Update employee role`,`Update employee manager`,`View employees by manager`,`View employees by department`,
+        `Delete Department`,`Delete Role`,`Delete Employee`,`See total budget by department`,`See total budget on select department`],
         name: 'optionslist',
     },  {
         type: 'input',
@@ -62,7 +64,7 @@ const employeeQuestions =[
     },{
         type: 'list',
         message: `Please select the employee to update`,
-        choices: [empInfo],
+        choices: [`hi`],
         name: 'empUpdate',
         when: (employee) => employee.optionslist === 'Update employee role'
     },
