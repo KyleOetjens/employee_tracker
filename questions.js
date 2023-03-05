@@ -1,3 +1,17 @@
+const mysql = require('mysql2');
+const db = mysql.createConnection(
+    {
+      host: 'localhost',
+      // MySQL username,
+      user: 'root',
+      // TODO: Add MySQL password
+      password: '',
+      database: 'employee_tracker'
+    },
+    console.log(`Connected to the employee_tracker database.`)
+  );
+  const empInfo = db.query(`SELECT first_name FROM employee_info`, (err, result) => {
+    if(err){console.log(err);}console.log(map(result));})
 const employeeQuestions =[
     {
         type: 'list',
@@ -45,7 +59,12 @@ const employeeQuestions =[
         message: `Please add the employee's manager if applicable`,
         name: 'empManager',
         when: (employee) => employee.optionslist === 'Add an employee'
+    },{
+        type: 'list',
+        message: `Please select the employee to update`,
+        choices: [empInfo],
+        name: 'empUpdate',
+        when: (employee) => employee.optionslist === 'Update employee role'
     },
 ]
-console.log(employeeQuestions);
 module.exports = employeeQuestions
