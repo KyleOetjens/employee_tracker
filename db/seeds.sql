@@ -12,9 +12,9 @@ VALUES ("Sales Director",100000,1),
        ("Brand Manager",85000,4),
        ("Developer",90000,5);
        
-INSERT INTO employee_info (first_name, last_name, role_id)
-VALUES ("Jon","Doe",1),
-       ("Jane","Doe",2),
-       ("Jim","Lee",3),
-       ("Jill","Lee",4),
-       ("Jack","Black",5);
+INSERT INTO employee_info (first_name, last_name, role_id, manager_id)
+VALUES ("Jon","Doe",1,NULL),
+       ("Jane","Doe",2,1),
+       ("Jim","Lee",3,1),
+       ("Jill","Lee",4,1),
+       ("Jack","Black",5,1);

@@ -1,24 +1,9 @@
-const mysql = require('mysql2');
-const db = mysql.createConnection(
-    {
-      host: 'localhost',
-      // MySQL username,
-      user: 'root',
-      // TODO: Add MySQL password
-      password: '',
-      database: 'employee_tracker'
-    },
-    console.log(`Connected to the employee_tracker database.`)
-  );
-  // empInfo = db.query(`SELECT first_name FROM employee_info`, (err, result) => {
-  //  if(err){console.log(err);}console.log(result);})
 const employeeQuestions =[
     {
         type: 'list',
         message: `What would you like to do?`,
         choices: [`View all departments`, `View all roles`,`View all employees`,`Add a department`,`Add a role`,`Add an employee`,
-        `Update employee role`,`Update employee manager`,`View employees by manager`,`View employees by department`,
-        `Delete Department`,`Delete Role`,`Delete Employee`,`See total budget by department`,`See total budget on select department`],
+        `Update employee role`,`View employees by manager`,`View employees by department`,`See total budget by department`,],
         name: 'optionslist',
     },  {
         type: 'input',
@@ -61,12 +46,7 @@ const employeeQuestions =[
         message: `Please add the employee's manager if applicable`,
         name: 'empManager',
         when: (employee) => employee.optionslist === 'Add an employee'
-    },{
-        type: 'list',
-        message: `Please select the employee to update`,
-        choices: [`hi`],
-        name: 'empUpdate',
-        when: (employee) => employee.optionslist === 'Update employee role'
     },
 ]
 module.exports = employeeQuestions
+
