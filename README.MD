@@ -23,7 +23,7 @@ Once you have opened the code, run npm i then node index,js.  You will be promte
 
 Use the app to view employees, roles and departments.  As well as update each table with new data
 
-See the link for a video walkthrough- https://drive.google.com/file/d/1zkhVuSie6zBTwn_GT-WXVidgR24Hzxr1/view
+See the link for a video walkthrough-  https://drive.google.com/file/d/1DpIb4BawtGXB2hrAqGe4mqvBqmT-kvoD/view
 ## Credits  
 
 Ask BCS
